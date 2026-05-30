@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Rss } from "lucide-react";
+import { Github, Twitter, Linkedin, Rss, Youtube } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const related = [
@@ -24,55 +24,58 @@ export function Footer() {
           </section>
         </Reveal>
 
-        <Reveal>
-          <section className="mb-16">
-            <h3 className="mb-6 text-xl font-semibold tracking-tight">Related reading</h3>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {related.map((r) => (
-                <a
-                  key={r.title}
-                  href="#"
-                  className="group rounded-xl border border-border bg-card/40 p-5 transition-all hover:-translate-y-1 hover:border-primary/40 hover:bg-card/70"
-                >
-                  <p className="mb-3 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">{r.tag}</p>
-                  <p className="text-sm font-medium leading-snug text-foreground group-hover:text-cyan">{r.title}</p>
-                </a>
-              ))}
-            </div>
-          </section>
-        </Reveal>
+        //
+       
 
         <Reveal>
-          <section className="mb-16 rounded-2xl border border-border bg-card/40 p-8 text-center">
-            <h3 className="mb-2 text-2xl font-semibold tracking-tight">Get the next deep-dive in your inbox</h3>
-            <p className="mb-6 text-sm text-muted-foreground">One essay every other week. No spam, unsubscribe anytime.</p>
-            <form className="mx-auto flex max-w-md flex-col gap-2 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="you@domain.com"
-                className="flex-1 rounded-lg border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none"
-              />
+          <section className="mb-12 rounded-2xl border border-border bg-card/40 p-8 sm:p-10 text-center">
+            <p className="mb-2 font-mono text-xs uppercase tracking-wider text-cyan">Come say hi</p>
+            <h3 className="mb-3 text-2xl font-semibold tracking-tight">Let's connect</h3>
+            <p className="mb-8 text-foreground/70 max-w-md mx-auto leading-relaxed">
+              I'm learning backend development in public — follow along for more articles, videos, and real code.
+            </p>
+            <div className="flex items-center justify-center gap-3">
               <button
-                type="submit"
-                className="rounded-lg bg-gradient-to-r from-primary to-cyan px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
+                onClick={() => window.open("https://www.youtube.com/@JonathanCodes365", "_blank")}
+                className="flex items-center gap-2 rounded-lg bg-red-500/10 border border-red-500/20 px-4 py-2.5 text-sm font-medium text-red-400 transition-colors hover:bg-red-500/20 hover:border-red-500/40"
               >
-                Subscribe
+                <Youtube className="h-4 w-4 pointer-events-none" />
+                YouTube
               </button>
-            </form>
+              <button
+                onClick={() => window.open("https://github.com/JonathanCodes365", "_blank")}
+                className="flex items-center gap-2 rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary/80 hover:text-foreground"
+              >
+                <Github className="h-4 w-4 pointer-events-none" />
+                GitHub
+              </button>
+              <button
+                onClick={() => window.open("https://x.com/Ngawang_777", "_blank")}
+                className="flex items-center gap-2 rounded-lg bg-secondary border border-border px-4 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary/80 hover:text-foreground"
+              >
+                <Twitter className="h-4 w-4 pointer-events-none" />
+                X
+              </button>
+            </div>
           </section>
         </Reveal>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="font-mono text-xs text-muted-foreground">© 2025 jonathanbuilds · Built for engineers who like to know how things work.</p>
           <div className="flex items-center gap-1">
-            {[Github, Twitter, Linkedin, Rss].map((Icon, i) => (
-              <a
+            {[
+              { Icon: Github, url: "https://github.com/JonathanCodes365" },
+              { Icon: Twitter, url: "https://x.com/Ngawang_777" },
+              { Icon: Linkedin, url: "#" },
+              { Icon: Rss, url: "#" },
+            ].map(({ Icon, url }, i) => (
+              <button
                 key={i}
-                href="#"
+                onClick={() => url !== "#" && window.open(url, "_blank")}
                 className="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
-                <Icon className="h-4 w-4" />
-              </a>
+                <Icon className="h-4 w-4 pointer-events-none" />
+              </button>
             ))}
           </div>
         </div>

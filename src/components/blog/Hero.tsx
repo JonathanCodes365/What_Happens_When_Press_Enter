@@ -12,7 +12,7 @@ export function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground backdrop-blur-sm"
         >
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan" />
-          Engineering · Networking · Web fundamentals
+          TheBeginning· Networking · Web fundamentals
         </motion.div>
 
         <motion.h1
@@ -31,7 +31,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.25 }}
           className="mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
         >
-          Understanding what really happens between pressing Enter and seeing a webpage.
+          Understanding what really happens between pressing {""}
+          <span className ="font-bold">Enter</span> and seeing a webpage.
         </motion.p>
 
         <motion.div

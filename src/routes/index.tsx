@@ -10,6 +10,7 @@ import { Terminal } from "@/components/blog/Terminal";
 import { DNSFlow, TCPHandshake, TLSHandshake, HTTPReqRes, Waterfall } from "@/components/blog/Diagrams";
 import { Footer } from "@/components/blog/Footer";
 import { Reveal } from "@/components/blog/Reveal";
+import { URLTear } from "@/components/blog/URLTear";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,7 +41,6 @@ function Index() {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <ReadingProgress />
-      <BackgroundFX />
 
       <nav className="fixed top-0 z-40 w-full glass border-b border-border/40">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
@@ -48,16 +48,13 @@ function Index() {
             <span className="h-2 w-2 rounded-full bg-gradient-to-br from-primary to-cyan" />
             <span className="font-mono text-sm font-semibold tracking-tight">jonathanbuilds</span>
           </a>
-          <div className="flex items-center gap-6 text-sm">
-            <a href="#" className="text-muted-foreground hover:text-foreground">Essays</a>
-            <a href="#" className="text-muted-foreground hover:text-foreground">Notes</a>
-            <a href="#" className="hidden text-muted-foreground hover:text-foreground sm:inline">Bookshelf</a>
-            <a href="#" className="rounded-md border border-border bg-card/60 px-3 py-1.5 text-xs font-medium hover:border-primary/50">Subscribe</a>
-          </div>
         </div>
       </nav>
 
-      <Hero />
+      <div className="relative">
+        <BackgroundFX />
+        <Hero />
+      </div>
 
       <main className="mx-auto max-w-7xl px-6 pb-20">
         <div className="grid gap-12 lg:grid-cols-[1fr_240px]">
@@ -110,6 +107,7 @@ function Index() {
                 title="The browser parses the URL"
                 subtitle="It's not just text — it's a tiny structured object."
               >
+                <URLTear />
                 <p>
                   When you press Enter, the browser tears the URL apart into pieces: the <strong className="text-foreground">scheme</strong>
                   {" "}(<code className="rounded bg-secondary px-1 font-mono text-xs">https</code>), the <strong className="text-foreground">host</strong>{" "}
@@ -262,8 +260,8 @@ Content-Length: 14302
                 </p>
                 <Waterfall />
                 <p>
-                  The DOM and CSSOM are built, combined into a render tree, laid out, painted, and composited. Anywhere along this chain a slow
-                  font, a render-blocking script, or a giant hero image can ruin everything.
+                  The DOM and CSSOM are built, combined into a render tree, laid out, painted, and composited. Anywhere
+                   along this chain a slow font, a render-blocking script, or a giant hero image can ruin everything.
                 </p>
               </StepCard>
 
