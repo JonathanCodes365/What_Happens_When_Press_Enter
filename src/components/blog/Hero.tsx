@@ -45,7 +45,7 @@ export function Hero() {
               N
             </div>
             <div>
-              <div className="text-sm font-semibold text-foreground">Ngawang</div>
+              <div className="text-sm font-semibold text-foreground">jonathanbuilds</div>
               <div className="text-xs text-muted-foreground">Flask backend developer</div>
             </div>
           </div>

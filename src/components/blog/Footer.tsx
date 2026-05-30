@@ -63,7 +63,7 @@ export function Footer() {
         </Reveal>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
-          <p className="font-mono text-xs text-muted-foreground">© 2025 Ngawang · Built for engineers who like to know how things work.</p>
+          <p className="font-mono text-xs text-muted-foreground">© 2025 jonathanbuilds · Built for engineers who like to know how things work.</p>
           <div className="flex items-center gap-1">
             {[Github, Twitter, Linkedin, Rss].map((Icon, i) => (
               <a

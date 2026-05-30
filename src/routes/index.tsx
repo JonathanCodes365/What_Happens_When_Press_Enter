@@ -14,7 +14,7 @@ import { Reveal } from "@/components/blog/Reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "What Actually Happens When You Press Enter on a URL? — Ngawang" },
+      { title: "What Actually Happens When You Press Enter on a URL? — jonathanbuilds" },
       { name: "description", content: "Understanding what really happens between pressing Enter and seeing a webpage. A deep, visual walkthrough for backend developers." },
       { property: "og:title", content: "What Actually Happens When You Press Enter on a URL?" },
       { property: "og:description", content: "DNS, TCP, TLS, HTTP, rendering — every step, visualized for engineers." },
@@ -46,7 +46,7 @@ function Index() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
           <a href="#" className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-gradient-to-br from-primary to-cyan" />
-            <span className="font-mono text-sm font-semibold tracking-tight">ngawang.dev</span>
+            <span className="font-mono text-sm font-semibold tracking-tight">jonathanbuilds</span>
           </a>
           <div className="flex items-center gap-6 text-sm">
             <a href="#" className="text-muted-foreground hover:text-foreground">Essays</a>
